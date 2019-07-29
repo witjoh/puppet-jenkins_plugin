@@ -1,0 +1,25 @@
+fixtures:
+    symlinks:
+      jenkins_plugin: "#{source_dir}"
+    repositories:
+      stdlib:
+        repo: https://github.com/puppetlabs/puppetlabs-stdlib
+        ref: v6.0.0
+      facterdb_facts: https://github.com/nwops/example_external_facterdb_facts.git
+      jenkins:
+        repo: https://github.com/witjoh/puppet-jenkins.git
+        branch: cli_config
+      archive:
+        repo: https://github.com/voxpupuli/puppet-archive
+        ref: v4.1.0
+      transition:
+        repo: https://github.com/puppetlabs/puppetlabs-transition.git
+        ref: 0.1.1
+      java:
+        repo: https://github.com/puppetlabs/puppetlabs-java.git
+        ref: v4.1.0
+      systemd:
+        repo: https://github.com/camptocamp/puppet-systemd.git
+        ref: 2.6.0
+
+    forge_modules:

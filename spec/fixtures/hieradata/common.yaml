@@ -1,0 +1,3 @@
+# Mostly used when modules contains explicit hiera calls
+# Put your keys in this file
+---

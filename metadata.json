@@ -1,0 +1,14 @@
+{
+  "name": "puppet-jenkins_plugin",
+  "version": "0.1.0",
+  "author": "Johan De Wit <johan@koewacht.net>",
+  "summary": "Module to install and configure jenkins plugins",
+  "license": "Apache-2.0",
+  "source": "https://github.com/witjoh/puppet-jenkins_plugin.git",
+  "project_page": "https://github.com/witjoh/puppet-jenkins_plugin.git",
+  "issues_url": "https://github.com/witjoh/puppet-jenkins_plugin.git/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 5.1.0"}
+  ],
+  "data_provider": null
+}
