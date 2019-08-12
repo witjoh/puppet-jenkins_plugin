@@ -102,13 +102,19 @@ class Actions {
         def  decoded = map.content.decodeBase64()
         contentXml = new String(decoded)
       }
+      // serverCredentialMappings if existing => for insync needed
+      def existingCfg = lookupGlobalMavenSettingsConfig(map.id)
+      def servermap = []
+      if ( existingCfg ) {
+        servermap = existingCfg.serverCredentialMappings
+      }
       cfg = new org.jenkinsci.plugins.configfiles.maven.GlobalMavenSettingsConfig(
         map.id,
         map.name,
         map.comment,
         contentXml,
         (map.replaceall) ? map.replaceall.toBoolean() : Boolean.TRUE,
-        []
+        servermap
       )
     }
     return cfg
@@ -138,6 +144,7 @@ class Actions {
       mvnConfig.remove(map.id)
     }
   }
+
   void insync_global_maven_settings_config(String... arguments) {
     def mapShould = globalMavenSettingsConfigToMap(mapToGlobalMavenSettingsConfig(util.argsToMap(arguments)))
     def mapIs = globalMavenSettingsConfigToMap(lookupGlobalMavenSettingsConfig(mapShould.id))
