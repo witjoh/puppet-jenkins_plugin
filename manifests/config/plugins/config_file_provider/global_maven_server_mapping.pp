@@ -26,9 +26,9 @@ define jenkins_plugin::config::plugins::config_file_provider::global_maven_serve
 
   $mytitle = "${maven_configid}-${serverid}"
 
-  $_maven_configid = "globalmavenconfigid:${maven_configid} "
-  $_serverid       = "serverid:${serverid} "
-  $_credentialsid  = "credentialsid:${credentialsid} "
+  $_maven_configid = "globalmavenconfigid:'${maven_configid}' "
+  $_serverid       = "serverid:'${serverid}' "
+  $_credentialsid  = "credentialsid:'${credentialsid}' "
 
   $set_unless_command = 'insync_global_maven_server_mapping'
   $del_unless_command = 'get_global_maven_server_mapping'
