@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::jquery_detached {
+class jenkins_plugin::plugins::base::jquery_detached (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'jquery-detached':
-    version => '1.2.1',
+    version => $version,
   }
 }

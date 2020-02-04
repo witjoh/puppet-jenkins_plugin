@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::ace_editor {
+class jenkins_plugin::plugins::base::ace_editor (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'ace-editor':
-    version => '1.1',
+    version => $version,
   }
 }

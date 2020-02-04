@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::docker_workflow {
+class jenkins_plugin::plugins::base::docker_workflow (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'docker-workflow':
-    version => '1.18',
+    version => $version,
   }
 }

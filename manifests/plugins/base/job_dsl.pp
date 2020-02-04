@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::job_dsl {
+class jenkins_plugin::plugins::base::job_dsl (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'job-dsl':
-    version => '1.74',
+    version => $version,
   }
 }

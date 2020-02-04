@@ -1,0 +1,10 @@
+# jenkins_plugin/hiera.yaml
+---
+version: 5
+defaults:
+  datadir: data
+  data_hash: yaml_data
+hierarchy:
+  - name: "Jenkins base plugins"
+    path: "plugins.yaml"
+

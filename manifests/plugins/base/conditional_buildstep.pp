@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::conditional_buildstep {
+class jenkins_plugin::plugins::base::conditional_buildstep (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'conditional-buildstep':
-    version => '1.3.6',
+    version => $version,
   }
 }

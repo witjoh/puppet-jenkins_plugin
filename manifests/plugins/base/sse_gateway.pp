@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::sse_gateway {
+class jenkins_plugin::plugins::base::sse_gateway (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'sse-gateway':
-    version => '1.18',
+    version => $version,
   }
 }

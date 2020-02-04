@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::jira {
+class jenkins_plugin::plugins::base::jira (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'jira':
-    version => '3.0.8',
+    version => $version,
   }
 }

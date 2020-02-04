@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::xvnc {
+class jenkins_plugin::plugins::base::xvnc (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'xvnc':
-    version => '1.24',
+    version => $version,
   }
 }

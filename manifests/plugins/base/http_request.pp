@@ -1,7 +1,9 @@
 # Manges the Jenkins Disk Usage plugin and dependencies
 #
-class jenkins_plugin::plugins::base::http_request {
+class jenkins_plugin::plugins::base::http_request (
+  Jenkins_plugin::SemVer $version,
+) {
   jenkins::plugin { 'http-request':
-    version => '1.8.22',
+    version => $version,
   }
 }

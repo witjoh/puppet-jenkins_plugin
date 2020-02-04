@@ -1,0 +1,25 @@
+<% | Hash $roles = {} | -%>
+// This file is managed by puppet
+// Check the class jenkins_plugin::config::master::bootstrap_role_strategy
+
+import jenkins.model.*
+import hudson.model.*
+import hudson.tools.*
+import hudson.security.*
+import com.synopsys.arc.jenkins.plugins.rolestrategy.*
+import com.michelin.cio.hudson.plugins.rolestrategy.*
+
+def j = Jenkins.get()
+def authStrategy = j.getAuthorizationStrategy()
+
+if (authStrategy instanceof RoleBasedAuthorizationStrategy) {
+  <% $roles['global'].each | String $role, Hash $settings | { -%>
+  <%   $permissions = join($settings['permissions'],",") -%>
+
+  authStrategy.doAddRole(RoleBasedAuthorizationStrategy.GLOBAL, '<%= $role %>', '<%= $permissions %>', 'overwite=true', '')
+    <% $settings['users'].each | $user | { -%>
+  authStrategy.doAssignRole(RoleBasedAuthorizationStrategy.GLOBAL, '<%= $role %>','<%= $user %>')
+    <% } -%>
+  <% } -%>
+}
+j.save()

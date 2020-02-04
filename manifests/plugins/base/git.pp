@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::git {
+class jenkins_plugin::plugins::base::git (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'git':
-    version => '3.10.0',
+    version => $version,
   }
 }

@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::workflow_aggregator {
+class jenkins_plugin::plugins::base::workflow_aggregator (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'workflow-aggregator':
-    version => '2.6',
+    version => $version,
   }
 }

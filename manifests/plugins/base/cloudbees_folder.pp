@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::cloudbees_folder {
+class jenkins_plugin::plugins::base::cloudbees_folder (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'cloudbees-folder':
-    version =>  '6.9',
+    version => $version,
   }
 }

@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::pubsub_light {
+class jenkins_plugin::plugins::base::pubsub_light (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'pubsub-light':
-    version => '1.12',
+    version => $version,
   }
 }

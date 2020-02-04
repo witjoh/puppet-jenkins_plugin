@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::pipeline_model_definition {
+class jenkins_plugin::plugins::base::pipeline_model_definition (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'pipeline-model-definition':
-    version => '1.3.9',
+    version => $version,
   }
 }

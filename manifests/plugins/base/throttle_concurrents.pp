@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::throttle_concurrents {
+class jenkins_plugin::plugins::base::throttle_concurrents (
+    Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'throttle-concurrents':
-    version => '2.0.1',
+    version => $version,
   }
 }

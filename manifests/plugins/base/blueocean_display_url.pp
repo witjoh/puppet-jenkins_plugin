@@ -1,7 +1,9 @@
-class jenkins_plugin::plugins::base::blueocean_display_url {
+class jenkins_plugin::plugins::base::blueocean_display_url (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'blueocean-display-url':
-    version => '2.3.0',
+    version => $version,
   }
 }
 

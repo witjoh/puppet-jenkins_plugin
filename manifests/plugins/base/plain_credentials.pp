@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::plain_credentials {
+class jenkins_plugin::plugins::base::plain_credentials (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'plain-credentials':
-    version => '1.5',
+    version => $version,
   }
 }

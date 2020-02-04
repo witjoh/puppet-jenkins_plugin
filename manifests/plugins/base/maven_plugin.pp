@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::maven_plugin {
+class jenkins_plugin::plugins::base::maven_plugin (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'maven-plugin':
-    version => '3.3',
+    version => $version,
   }
 }

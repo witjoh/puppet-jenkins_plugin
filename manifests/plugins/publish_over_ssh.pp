@@ -7,6 +7,5 @@ class jenkins_plugin::plugins::publish_over_ssh {
   include jenkins_plugin::plugins::base::publish_over
   include jenkins_plugin::plugins::base::jsch
   include jenkins_plugin::plugins::base::publish_over_ssh
-  ## structs is installed by the upstream module
-  # include jenkins_plugin::plugins::base::structs
+  include jenkins_plugin::plugins::base::structs
 }

@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::pipeline_maven {
+class jenkins_plugin::plugins::base::pipeline_maven (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin {'pipeline-maven':
-    version => '3.8.0',
+    version => $version,
   }
 }

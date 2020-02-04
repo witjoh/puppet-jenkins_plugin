@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::docker_plugin {
+class jenkins_plugin::plugins::base::docker_plugin (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'docker-plugin':
-    version => '1.1.6',
+    version => $version,
   }
 }

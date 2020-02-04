@@ -1,7 +1,9 @@
-class jenkins_plugin::plugins::base::blueocean_bitbucket_pipeline {
+class jenkins_plugin::plugins::base::blueocean_bitbucket_pipeline (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'blueocean-bitbucket-pipeline':
-    version => '1.17.0',
+    version => $version,
   }
 }
 

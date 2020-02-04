@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::metrics_graphite {
+class jenkins_plugin::plugins::base::metrics_graphite (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'metrics-graphite':
-    version => '3.0.0',
+    version => $version,
   }
 }

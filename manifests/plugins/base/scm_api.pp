@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::scm_api {
+class jenkins_plugin::plugins::base::scm_api (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'scm-api':
-    version => '2.5.1',
+    version => $version,
   }
 }

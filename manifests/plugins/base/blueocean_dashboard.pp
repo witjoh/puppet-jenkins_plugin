@@ -1,7 +1,9 @@
-class jenkins_plugin::plugins::base::blueocean_dashboard {
+class jenkins_plugin::plugins::base::blueocean_dashboard (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'blueocean-dashboard':
-    version => '1.17.0',
+    version => $version,
   }
 }
 

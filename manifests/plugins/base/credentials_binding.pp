@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::credentials_binding {
+class jenkins_plugin::plugins::base::credentials_binding (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'credentials-binding':
-    version => '1.19',
+    version => $version,
   }
 }

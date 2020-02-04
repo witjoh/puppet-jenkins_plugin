@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::workflow_cps {
+class jenkins_plugin::plugins::base::workflow_cps (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'workflow-cps':
-    version => '2.70',
+    version => $version,
   }
 }

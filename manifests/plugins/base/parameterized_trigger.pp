@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::parameterized_trigger {
+class jenkins_plugin::plugins::base::parameterized_trigger (
+    Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'parameterized-trigger':
-    version => '2.35.2',
+    version => $version,
   }
 }

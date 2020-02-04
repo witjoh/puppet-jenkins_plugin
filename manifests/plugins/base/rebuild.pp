@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::rebuild {
+class jenkins_plugin::plugins::base::rebuild (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'rebuild':
-    version => '1.31',
+    version => $version,
   }
 }

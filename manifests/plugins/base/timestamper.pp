@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::timestamper {
+class jenkins_plugin::plugins::base::timestamper (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'timestamper':
-    version => '1.10',
+    version => $version,
   }
 }

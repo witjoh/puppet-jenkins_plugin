@@ -1,7 +1,9 @@
-class jenkins_plugin::plugins::base::blueocean_jwt {
+class jenkins_plugin::plugins::base::blueocean_jwt (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'blueocean-jwt':
-    version => '1.17.0',
+    version => $version,
   }
 }
 

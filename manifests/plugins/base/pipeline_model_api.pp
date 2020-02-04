@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::pipeline_model_api {
+class jenkins_plugin::plugins::base::pipeline_model_api (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'pipeline-model-api':
-    version =>'1.3.9',
+    version => $version,
   }
 }

@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::lockable_resources {
+class jenkins_plugin::plugins::base::lockable_resources (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'lockable-resources':
-    version =>'2.5',
+    version => $version,
   }
 }

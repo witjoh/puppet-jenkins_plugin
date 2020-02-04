@@ -1,7 +1,9 @@
-class jenkins_plugin::plugins::base::blueocean_pipeline_api_impl {
+class jenkins_plugin::plugins::base::blueocean_pipeline_api_impl (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'blueocean-pipeline-api-impl':
-    version => '1.17.0',
+    version => $version,
   }
 }
 

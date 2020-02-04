@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::blueocean {
+class jenkins_plugin::plugins::base::blueocean (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'blueocean':
-    version => '1.17.0',
+    version => $version,
   }
 }

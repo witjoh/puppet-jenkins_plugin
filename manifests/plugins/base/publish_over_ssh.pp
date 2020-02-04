@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::publish_over_ssh {
+class jenkins_plugin::plugins::base::publish_over_ssh (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'publish-over-ssh':
-    version => '1.20.1',
+    version => $version,
   }
 }

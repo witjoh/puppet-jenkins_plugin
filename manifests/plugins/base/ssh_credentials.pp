@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::ssh_credentials {
+class jenkins_plugin::plugins::base::ssh_credentials (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'ssh-credentials':
-    version => '1.17',
+    version => $version,
   }
 }

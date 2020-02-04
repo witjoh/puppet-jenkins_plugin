@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::pipeline_milestone_step {
+class jenkins_plugin::plugins::base::pipeline_milestone_step (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'pipeline-milestone-step':
-    version => '1.3.1',
+    version => $version,
   }
 }

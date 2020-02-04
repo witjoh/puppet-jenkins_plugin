@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::mailer {
+class jenkins_plugin::plugins::base::mailer (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'mailer':
-    version => '1.23',
+    version => $version,
   }
 }

@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::momentjs {
+class jenkins_plugin::plugins::base::momentjs (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'momentjs':
-    version => '1.1.1',
+    version => $version,
   }
 }
