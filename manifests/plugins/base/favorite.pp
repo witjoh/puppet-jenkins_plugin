@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::favorite {
+class jenkins_plugin::plugins::base::favorite (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'favorite':
-    version => '2.3.2',
+    version => $version,
   }
 }

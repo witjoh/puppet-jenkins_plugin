@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::script_security {
+class jenkins_plugin::plugins::base::script_security (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'script-security':
-    version => '1.60',
+    version => $version,
   }
 }

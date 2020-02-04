@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::branch_api {
+class jenkins_plugin::plugins::base::branch_api (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'branch-api':
-    version => '2.5.3',
+    version => $version,
   }
 }

@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::gitlab_plugin {
+class jenkins_plugin::plugins::base::gitlab_plugin (
+  Jenkins_plugin::SemVer $version,
+) {
   jenkins::plugin { 'gitlab-plugin':
-    version => '1.5.12',
+    version => $version,
   }
 }
 

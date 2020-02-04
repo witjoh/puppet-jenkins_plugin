@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::blazemeterjenkinsplugin {
+class jenkins_plugin::plugins::base::blazemeterjenkinsplugin (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'BlazeMeterJenkinsPlugin':
-    version => '4.7',
+    version => $version,
   }
 }

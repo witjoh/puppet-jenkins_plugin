@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::pipeline_model_extensions {
+class jenkins_plugin::plugins::base::pipeline_model_extensions (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'pipeline-model-extensions':
-    version => '1.3.9',
+    version => $version,
   }
 }

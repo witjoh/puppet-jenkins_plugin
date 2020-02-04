@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::jdk_tool {
+class jenkins_plugin::plugins::base::jdk_tool (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'jdk-tool':
-    version => '1.2',
+    version => $version,
   }
 }

@@ -28,6 +28,19 @@ of this plugin only.
 This way, we avoid duplicate resource definition even if we include multiple plugins having the same
 dependencie.
 
+##### Updating plugin versions
+
+We moved the plugin versions of the base plugins to **data in the module**.
+In the **scripts** directory you will find the **upd_plugin_versions.py** script.  This will generate a
+list of all plugins found in the [Jenkins update center json file](https://updates.jenkins.io/stable/update-center.actual.json)
+which can be used directly as input for the **data/plugin.yaml** file.
+
+````
+cd scripts
+echo '---' > ../data/plugins.yaml
+./upd_plugin_versions.py | sort >> ../data/plugins.yaml
+````
+
 ### The groovy scripts
 
 in the files/groovy/plugins directory, you will find the groovy files used by the puppet code found in

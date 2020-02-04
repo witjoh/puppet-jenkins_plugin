@@ -12,5 +12,6 @@ class jenkins_plugin::plugins::build_pipeline {
   include jenkins_plugin::plugins::base::mailer
   include jenkins_plugin::plugins::base::jquery
   include jenkins_plugin::plugins::base::matrix_project
+  include jenkins_plugin::plugins::base::script_security
 
 }

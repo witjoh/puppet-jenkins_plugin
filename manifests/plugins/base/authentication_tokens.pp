@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::authentication_tokens {
+class jenkins_plugin::plugins::base::authentication_tokens (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'authentication-tokens':
-    version =>'1.3',
+    version => $version,
   }
 }

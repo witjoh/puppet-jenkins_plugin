@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::ansicolor {
+class jenkins_plugin::plugins::base::ansicolor (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'ansicolor':
-    version => '0.6.2',
+    version => $version,
   }
 }

@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::config_file_provider {
+class jenkins_plugin::plugins::base::config_file_provider (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'config-file-provider':
-    version => '3.6.2',
+    version => $version,
   }
 }

@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::cloudbees_bitbucket_branch_source {
+class jenkins_plugin::plugins::base::cloudbees_bitbucket_branch_source (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'cloudbees-bitbucket-branch-source':
-    version => '2.4.5',
+    version => $version,
   }
 }

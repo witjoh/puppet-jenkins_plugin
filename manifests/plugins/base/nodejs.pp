@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::nodejs {
+class jenkins_plugin::plugins::base::nodejs (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'nodejs':
-    version => '1.3.3',
+    version => $version,
   }
 }

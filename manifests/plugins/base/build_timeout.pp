@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::build_timeout {
+class jenkins_plugin::plugins::base::build_timeout (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'build-timeout':
-    version => '1.19',
+    version => $version,
   }
 }

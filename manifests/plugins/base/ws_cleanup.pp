@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::ws_cleanup {
+class jenkins_plugin::plugins::base::ws_cleanup (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'ws-cleanup':
-    version => '0.37',
+    version => $version,
   }
 }

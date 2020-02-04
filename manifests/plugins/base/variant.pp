@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::variant {
+class jenkins_plugin::plugins::base::variant (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'variant':
-    version => '1.2',
+    version => $version,
   }
 }

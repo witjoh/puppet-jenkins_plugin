@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::mercurial {
+class jenkins_plugin::plugins::base::mercurial (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'mercurial':
-    version => '2.6',
+    version => $version,
   }
 }

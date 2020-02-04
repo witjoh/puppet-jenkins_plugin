@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::github_branch_source {
+class jenkins_plugin::plugins::base::github_branch_source (
+  Jenkins_plugin::SemVer $version,
+) {
   jenkins::plugin { 'github-branch-source':
-    version => '2.5.3',
+    version => $version,
   }
 }
 

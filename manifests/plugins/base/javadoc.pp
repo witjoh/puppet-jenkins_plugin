@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::javadoc {
+class jenkins_plugin::plugins::base::javadoc (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'javadoc':
-    version => '1.5',
+    version => $version,
   }
 }

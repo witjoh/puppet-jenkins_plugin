@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::maven_repo_cleaner {
+class jenkins_plugin::plugins::base::maven_repo_cleaner (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'maven-repo-cleaner':
-    version => '1.2',
+    version => $version,
   }
 }

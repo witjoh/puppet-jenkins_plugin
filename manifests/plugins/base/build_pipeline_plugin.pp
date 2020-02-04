@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::build_pipeline_plugin {
+class jenkins_plugin::plugins::base::build_pipeline_plugin (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'build-pipeline-plugin':
-    version => '1.5.8',
+    version => $version,
   }
 }

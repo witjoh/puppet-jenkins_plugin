@@ -1,7 +1,9 @@
-class jenkins_plugin::plugins::base::blueocean_pipeline_editor {
+class jenkins_plugin::plugins::base::blueocean_pipeline_editor (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'blueocean-pipeline-editor':
-    version => '1.17.0',
+    version => $version,
   }
 }
 

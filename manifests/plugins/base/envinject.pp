@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::envinject {
+class jenkins_plugin::plugins::base::envinject (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'envinject':
-    version => '2.1.6',
+    version => $version,
   }
 }

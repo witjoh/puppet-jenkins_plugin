@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::ssh_slaves {
+class jenkins_plugin::plugins::base::ssh_slaves (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'ssh-slaves':
-    version => '1.30.0',
+    version => $version,
   }
 }

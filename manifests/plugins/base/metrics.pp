@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::metrics {
+class jenkins_plugin::plugins::base::metrics (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'metrics':
-    version => '4.0.2.5',
+    version => $version,
   }
 }

@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::build_blocker_plugin {
+class jenkins_plugin::plugins::base::build_blocker_plugin (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'build-blocker-plugin':
-    version => '1.7.3',
+    version => $version,
   }
 }

@@ -1,7 +1,9 @@
-class jenkins_plugin::plugins::base::blueocean_personalization {
+class jenkins_plugin::plugins::base::blueocean_personalization (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'blueocean-personalization':
-    version => '1.17.0',
+    version => $version,
   }
 }
 

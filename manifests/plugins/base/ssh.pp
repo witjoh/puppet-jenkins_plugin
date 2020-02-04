@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::ssh {
+class jenkins_plugin::plugins::base::ssh (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'ssh':
-    version => '2.6.1',
+    version => $version,
   }
 }

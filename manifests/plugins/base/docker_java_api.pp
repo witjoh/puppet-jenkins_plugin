@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::docker_java_api {
+class jenkins_plugin::plugins::base::docker_java_api (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'docker-java-api':
-    version => '3.0.14',
+    version => $version,
   }
 }

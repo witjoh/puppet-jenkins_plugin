@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::testinprogress {
+class jenkins_plugin::plugins::base::testinprogress (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'testInProgress':
-    version => '1.4',
+    version => $version,
   }
 }

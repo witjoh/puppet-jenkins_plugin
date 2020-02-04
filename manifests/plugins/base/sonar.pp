@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::sonar {
+class jenkins_plugin::plugins::base::sonar (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'sonar':
-    version => '2.9',
+    version => $version,
   }
 }

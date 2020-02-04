@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::gradle {
+class jenkins_plugin::plugins::base::gradle (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'gradle':
-    version => '1.32',
+    version => $version,
   }
 }

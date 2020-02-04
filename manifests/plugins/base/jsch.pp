@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::jsch {
+class jenkins_plugin::plugins::base::jsch (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'jsch':
-    version => '0.1.55',
+    version => $version,
   }
 }

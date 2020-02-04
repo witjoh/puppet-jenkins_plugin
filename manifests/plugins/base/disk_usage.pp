@@ -1,7 +1,9 @@
 # Manges the Jenkins Disk Usage plugin and dependencies
 #
-class jenkins_plugin::plugins::base::disk_usage {
+class jenkins_plugin::plugins::base::disk_usage (
+  Jenkins_plugin::SemVer $version,
+) {
   jenkins::plugin { 'disk-usage':
-    version => '0.28',
+    version => $version,
   }
 }

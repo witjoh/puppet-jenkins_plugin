@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::copyartifact {
+class jenkins_plugin::plugins::base::copyartifact (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'copyartifact':
-    version => '1.42',
+    version => $version,
   }
 }

@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::workflow_scm_step {
+class jenkins_plugin::plugins::base::workflow_scm_step (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'workflow-scm-step':
-    version => '2.9',
+    version => $version,
   }
 }

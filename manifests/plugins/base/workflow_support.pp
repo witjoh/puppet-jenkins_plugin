@@ -1,6 +1,8 @@
-class jenkins_plugin::plugins::base::workflow_support {
+class jenkins_plugin::plugins::base::workflow_support (
+  Jenkins_plugin::SemVer $version,
+) {
 
   jenkins::plugin { 'workflow-support':
-    version => '3.3',
+    version => $version,
   }
 }
