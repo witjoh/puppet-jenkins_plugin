@@ -17,8 +17,8 @@ describe 'jenkins_plugin::config::plugins::config_file_provider::global_maven_se
 
     it do
       is_expected.to contain_jenkins__cli__exec('set_global_maven_server_mapping-mavenid-serverid').with(
-        command: 'set_global_maven_server_mapping globalmavenconfigid:mavenid serverid:serverid credentialsid:credsid',
-        unless: '[[ $($HELPER_CMD insync_global_maven_server_mapping "globalmavenconfigid:mavenid serverid:serverid credentialsid:credsid") == true ]]',
+        command: 'set_global_maven_server_mapping globalmavenconfigid:\'mavenid\' serverid:\'serverid\' credentialsid:\'credsid\'',
+        unless: '[[ $($HELPER_CMD insync_global_maven_server_mapping "globalmavenconfigid:\'mavenid\' serverid:\'serverid\' credentialsid:\'credsid\'") == true ]]',
       )
     end
   end
@@ -35,8 +35,8 @@ describe 'jenkins_plugin::config::plugins::config_file_provider::global_maven_se
 
     it do
       is_expected.to contain_jenkins__cli__exec('del_global_maven_server_mapping-mavenid-serverid').with(
-        command: 'del_global_maven_server_mapping globalmavenconfigid:mavenid serverid:serverid credentialsid:credsid',
-        unless: '[[ -z $($HELPER_CMD get_global_maven_server_mapping globalmavenconfigid:mavenid serverid:serverid credentialsid:credsid) ]]',
+        command: 'del_global_maven_server_mapping globalmavenconfigid:\'mavenid\' serverid:\'serverid\' credentialsid:\'credsid\'',
+        unless: '[[ -z $($HELPER_CMD get_global_maven_server_mapping globalmavenconfigid:\'mavenid\' serverid:\'serverid\' credentialsid:\'credsid\') ]]',
       )
     end
   end

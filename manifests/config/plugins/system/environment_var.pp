@@ -18,7 +18,7 @@
 #
 # @param force_upcase : when set to true. $env_key is converted to upcase.
 #
-define jenkins_plugn::config::plugins::system::environment_var(
+define jenkins_plugin::config::plugins::system::environment_var(
   Optional[String]          $env_value    = undef,
   String                    $env_key      = $title,
   Enum['absent', 'present'] $ensure       = 'present',

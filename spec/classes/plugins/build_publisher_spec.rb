@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'shared_contexts'
 
-describe 'jenkins_plugins::plugins::build_publisher' do
+describe 'jenkins_plugin::plugins::build_publisher' do
   xit do
     is_expected.to contain_Jenkins_plugin__Plugins__Install_groovy('build-publisher')
   end
