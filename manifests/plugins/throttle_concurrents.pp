@@ -1,3 +1,5 @@
+# Manages the Jenkins throttle_concurrents plugin and dependencies
+#
 class jenkins_plugin::plugins::throttle_concurrents {
 
   include jenkins_plugin::plugins::base::throttle_concurrents

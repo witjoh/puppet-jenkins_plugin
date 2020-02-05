@@ -1,3 +1,5 @@
+# Manages the Jenkins role-strategy plugin
+#
 class jenkins_plugin::plugins::base::role_strategy (
   Jenkins_plugin::SemVer $version,
 ) {

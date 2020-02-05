@@ -8,7 +8,38 @@
   "project_page": "https://github.com/witjoh/puppet-jenkins_plugin.git",
   "issues_url": "https://github.com/witjoh/puppet-jenkins_plugin.git/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 5.1.0"}
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 5.0.0 < 7.0.0"
+    },
+    {
+      "name": "puppet-jenkins",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
+    }
   ],
-  "data_provider": null
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "7",
+        "8"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 5.5.0 < 7.0.0"
+    }
+  ],
+  "pdk-version": "1.15.0",
+  "template-url": "pdk-default#1.15.0",
+  "template-ref": "tags/1.15.0-0-g0bc522e"
 }

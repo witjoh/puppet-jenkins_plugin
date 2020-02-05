@@ -1,3 +1,5 @@
+# Manages the Jenkins workflow-basic-steps plugin
+#
 class jenkins_plugin::plugins::base::workflow_basic_steps (
   Jenkins_plugin::SemVer $version,
 ) {

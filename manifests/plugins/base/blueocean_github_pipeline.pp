@@ -1,3 +1,5 @@
+# Manages the Jenkins blueocean-github-pipeline plugin
+# 
 class jenkins_plugin::plugins::base::blueocean_github_pipeline (
   Jenkins_plugin::SemVer $version,
 ) {

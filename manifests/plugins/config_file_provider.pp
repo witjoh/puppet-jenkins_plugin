@@ -1,3 +1,5 @@
+# Manages the Jenkins config_file_provider plugin and dependencies
+#
 class jenkins_plugin::plugins::config_file_provider {
 
   jenkins_plugin::plugins::install_groovy { 'config-file-provider': }

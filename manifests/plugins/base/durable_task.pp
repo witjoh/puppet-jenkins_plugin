@@ -1,3 +1,5 @@
+# Manages the Jenkins durable-task plugin
+#
 class jenkins_plugin::plugins::base::durable_task (
   Jenkins_plugin::SemVer $version,
 ) {

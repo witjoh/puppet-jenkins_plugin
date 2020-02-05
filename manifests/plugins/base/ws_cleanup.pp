@@ -1,3 +1,5 @@
+# Manages the Jenkins ws-cleanup plugin
+#
 class jenkins_plugin::plugins::base::ws_cleanup (
   Jenkins_plugin::SemVer $version,
 ) {

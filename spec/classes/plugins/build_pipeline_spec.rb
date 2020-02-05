@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::plugins::build_pipeline' do
-
   ['build-pipeline-plugin',
    'parameterized-trigger',
    'conditional-buildstep',
@@ -14,11 +13,9 @@ describe 'jenkins_plugin::plugins::build_pipeline' do
    'jsch',
    'junit',
    'mailer',
-   'jquery',
-  ].each do | name |
+   'jquery'].each do |name|
     it do
-      is_expected.to contain_jenkins__plugin(name).with_version(/\d.*/)
+      is_expected.to contain_jenkins__plugin(name).with_version(%r{\d.*})
     end
   end
-
 end

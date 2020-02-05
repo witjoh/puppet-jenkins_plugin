@@ -60,7 +60,7 @@ describe 'Jenkins_plugin::SemVer' do
     context 'with garbage inputs' do
       [
         '1',
-#        '1.2',
+        #        '1.2',
         '1.2.3-0123',
         '1.2.3-0123.0123',
         '1.2.3-0123+meta',
@@ -99,7 +99,7 @@ describe 'Jenkins_plugin::SemVer' do
         '+justmeta',
         '9.8.7+meta+meta',
         '9.8.7-whatever+meta+meta',
-        '99999999999999999999999.999999999999999999.99999999999999999----RC-SNAPSHOT.12.09.1--------------------------------..12 ',       
+        '99999999999999999999999.999999999999999999.99999999999999999----RC-SNAPSHOT.12.09.1--------------------------------..12 ',
       ].each do |value|
         describe value.inspect do
           it { is_expected.not_to allow_value(value) }

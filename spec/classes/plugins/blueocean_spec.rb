@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::plugins::blueocean' do
-
   [
     'apache-httpcomponents-client-4-api',
     'blueocean',
@@ -70,9 +69,9 @@ describe 'jenkins_plugin::plugins::blueocean' do
     'workflow-multibranch',
     'workflow-step-api',
     'workflow-support',
-  ].each do | name |
+  ].each do |name|
     it do
-      is_expected.to contain_jenkins__plugin(name).with_version(/\d.*/)
+      is_expected.to contain_jenkins__plugin(name).with_version(%r{\d.*})
     end
   end
 end

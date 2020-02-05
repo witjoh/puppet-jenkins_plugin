@@ -1,3 +1,5 @@
+# Manages the Jenkins docker-java-api plugin
+#
 class jenkins_plugin::plugins::base::docker_java_api (
   Jenkins_plugin::SemVer $version,
 ) {

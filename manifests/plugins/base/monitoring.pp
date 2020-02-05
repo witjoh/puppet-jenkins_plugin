@@ -1,3 +1,5 @@
+# Manages the Jenkins monitoring plugin
+#
 class jenkins_plugin::plugins::base::monitoring (
   Jenkins_plugin::SemVer $version,
 ) {

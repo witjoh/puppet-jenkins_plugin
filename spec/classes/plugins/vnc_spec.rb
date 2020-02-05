@@ -5,9 +5,9 @@ describe 'jenkins_plugin::plugins::vnc' do
   [
     'xvnc',
     'vncviewer',
-  ].each do | name |
+  ].each do |name|
     it do
-      is_expected.to contain_jenkins__plugin(name).with_version(/\d.*/)
+      is_expected.to contain_jenkins__plugin(name).with_version(%r{\d.*})
     end
   end
 

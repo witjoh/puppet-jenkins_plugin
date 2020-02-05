@@ -1,3 +1,5 @@
+# Manages the Jenkins pipeline-model-definition plugin
+#
 class jenkins_plugin::plugins::base::pipeline_model_definition (
   Jenkins_plugin::SemVer $version,
 ) {

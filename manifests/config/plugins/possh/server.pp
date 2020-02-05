@@ -88,7 +88,7 @@ define jenkins_plugin::config::plugins::possh::server (
       $_jumphost = undef
     }
 
-    $host_config = strip("name:'${configname}' hostname:${hostname} username:${username} port:${port} timout:${timeout} disableexec:${disableexec} ${_remoterootdir}${_jumphost}")
+    $host_config = strip("name:'${configname}' hostname:${hostname} username:${username} port:${port} timout:${timeout} disableexec:${disableexec} ${_remoterootdir}${_jumphost}") # lint:ignore:140chars
 
     if $overridekey {
 

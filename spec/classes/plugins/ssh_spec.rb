@@ -6,12 +6,11 @@ describe 'jenkins_plugin::plugins::ssh' do
     is_expected.to contain_Jenkins_plugin__Plugins__Install_groovy('ssh')
   end
 
-  [ 'ssh',
-    'jsch',
-    'ssh-credentials',
-  ].each do | name |
+  ['ssh',
+   'jsch',
+   'ssh-credentials'].each do |name|
     it do
-      is_expected.to contain_jenkins__plugin(name).with_version(/\d.*/)
+      is_expected.to contain_jenkins__plugin(name).with_version(%r{\d.*})
     end
   end
 end

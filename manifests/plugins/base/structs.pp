@@ -1,3 +1,5 @@
+# Manages the Jenkins structs plugin
+#
 class jenkins_plugin::plugins::base::structs (
   Jenkins_plugin::SemVer $version,
 ) {

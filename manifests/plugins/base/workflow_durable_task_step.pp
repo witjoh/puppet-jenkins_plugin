@@ -1,3 +1,5 @@
+# Manages the Jenkins workflow-durable-task-step plugin
+#
 class jenkins_plugin::plugins::base::workflow_durable_task_step (
   Jenkins_plugin::SemVer $version,
 ) {

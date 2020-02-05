@@ -18,6 +18,7 @@ describe 'jenkins_plugin::config::plugins::gitlab::global' do
         use_authenticated_endpoint: false,
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('gitlab_set_global').with(
         command: 'gitlab_set_global false',

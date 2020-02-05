@@ -1,55 +1,54 @@
-RSpec.configure do |c|
-  c.mock_with :rspec
-end
 require 'puppetlabs_spec_helper/module_spec_helper'
-require 'rspec-puppet-utils'
 require 'rspec-puppet-facts'
-require 'rspec_junit_formatter'
+
+require 'spec_helper_local' if File.file?(File.join(File.dirname(__FILE__), 'spec_helper_local.rb'))
 
 include RspecPuppetFacts
 
-# Uncomment this to show coverage report, also useful for debugging
-at_exit { RSpec::Puppet::Coverage.report! }
+default_facts = {
+  puppetversion: Puppet.version,
+  facterversion: Facter.version,
+}
 
-# set to "yes" to enable strict variable checking, the equivalent of setting strict_variables=true in puppet.conf.
-ENV['STRICT_VARIABLES'] = 'yes'
+default_fact_files = [
+  File.expand_path(File.join(File.dirname(__FILE__), 'default_facts.yml')),
+  File.expand_path(File.join(File.dirname(__FILE__), 'default_module_facts.yml')),
+]
 
-# set to the desired ordering method ("title-hash", "manifest", or "random") to set the order of unrelated resources
-# when applying a catalog. Leave unset for the default behavior, currently "random". This is equivalent to setting
-# ordering in puppet.conf.
-ENV['ORDERING'] = 'random'
+default_fact_files.each do |f|
+  next unless File.exist?(f) && File.readable?(f) && File.size?(f)
 
-# set to "no" to enable structured facts, otherwise leave unset to retain the current default behavior.
-# This is equivalent to setting stringify_facts=false in puppet.conf.
-ENV['STRINGIFY_FACTS']  = 'no'
-
-# set to "yes" to enable the $facts hash and trusted node data, which enabled $facts and $trusted hashes.
-# This is equivalent to setting trusted_node_data=true in puppet.conf.
-ENV['TRUSTED_NODE_DATA'] = 'yes'
-include RspecPuppetFacts
-
-def fixtures_dir
-  @fixtures_dir ||= File.join(File.dirname(__FILE__), 'fixtures')
+  begin
+    default_facts.merge!(YAML.safe_load(File.read(f), [], [], true))
+  rescue => e
+    RSpec.configuration.reporter.message "WARNING: Unable to load #{f}: #{e}"
+  end
 end
 
-def mock_facts
-  @mock_facts ||= File.join(fixtures_dir, 'facterdb_facts')
+# read default_facts and merge them over what is provided by facterdb
+default_facts.each do |fact, value|
+  add_custom_fact fact, value
 end
-
-ENV['FACTERDB_SEARCH_PATHS'] = mock_facts
 
 RSpec.configure do |c|
-  c.example_status_persistence_file_path = "junit/examples.txt"
-  c.formatter = 'documentation'
-  c.add_formatter('RspecJunitFormatter', 'junit/reports_junit.xml')
-  c.mock_with :rspec
-  c.hiera_config = File.expand_path(File.join(__FILE__, '../fixtures/hiera.yaml'))
-  c.default_facts = {
-    'osfamily'               => 'RedHat',
-    'operatingsystem'        => 'RedHat',
-    'systemd'                => true,
-    'operatingsystemrelease' => '7.6',
-    'kernel'                 => 'Linux',
-  }
-
+  c.default_facts = default_facts
+  c.before :each do
+    # set to strictest setting for testing
+    # by default Puppet runs at warning level
+    Puppet.settings[:strict] = :warning
+  end
+  c.filter_run_excluding(bolt: true) unless ENV['GEM_BOLT']
+  c.after(:suite) do
+  end
 end
+
+# Ensures that a module is defined
+# @param module_name Name of the module
+def ensure_module_defined(module_name)
+  module_name.split('::').reduce(Object) do |last_module, next_module|
+    last_module.const_set(next_module, Module.new) unless last_module.const_defined?(next_module, false)
+    last_module.const_get(next_module, false)
+  end
+end
+
+# 'spec_overrides' from sync.yml will appear below this line

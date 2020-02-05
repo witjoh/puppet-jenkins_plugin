@@ -1,3 +1,5 @@
+# Manages the Jenkins workflow-step-api plugin
+#
 class jenkins_plugin::plugins::base::workflow_step_api (
   Jenkins_plugin::SemVer $version,
 ) {

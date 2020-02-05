@@ -1,3 +1,5 @@
+# Manages the Jenkins xvnc plugin
+#
 class jenkins_plugin::plugins::base::xvnc (
   Jenkins_plugin::SemVer $version,
 ) {

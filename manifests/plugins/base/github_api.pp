@@ -1,3 +1,5 @@
+# Manages the Jenkins github-api plugin
+#
 class jenkins_plugin::plugins::base::github_api (
   Jenkins_plugin::SemVer $version,
 ) {

@@ -2,9 +2,7 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::master::security' do
-
   context 'default params' do
-
     it do
       is_expected.to contain_class('jenkins_plugin::config::master::groovy')
     end
@@ -39,7 +37,6 @@ describe 'jenkins_plugin::config::master::security' do
   end
 
   context 'custom params' do
-
     let(:params) do
       {
         csfr_protection: true,

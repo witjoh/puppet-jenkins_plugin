@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::plugins::maven' do
-
   let(:title) { 'my_maven' }
 
   context 'default parameters' do

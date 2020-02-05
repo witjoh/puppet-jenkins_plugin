@@ -14,12 +14,13 @@ describe 'jenkins_plugin::config::plugins::folder' do
     end
   end
 
-  context 'folder => otherfolder' do 
+  context 'folder => otherfolder' do
     let(:params) do
       {
-        folder: 'otherfolder'
+        folder: 'otherfolder',
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('setFolder-myfolder').with(
         command: 'setFolder otherfolder',
@@ -52,6 +53,7 @@ describe 'jenkins_plugin::config::plugins::folder' do
         force_remove: true,
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('removeFolder-myfolder').with(
         command: 'removeFolder myfolder true',

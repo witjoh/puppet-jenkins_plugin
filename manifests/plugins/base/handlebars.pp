@@ -1,3 +1,5 @@
+# Manages the Jenkins handlebars plugin
+#
 class jenkins_plugin::plugins::base::handlebars (
   Jenkins_plugin::SemVer $version,
 ) {

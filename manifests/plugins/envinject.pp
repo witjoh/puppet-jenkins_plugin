@@ -1,3 +1,5 @@
+# Manages the Jenkins envinject plugin and dependencies
+#
 class jenkins_plugin::plugins::envinject {
 
   include jenkins_plugin::plugins::base::envinject

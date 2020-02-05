@@ -2,11 +2,9 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::plugins::ldap::server' do
-
   let(:title) { 'ldap://ldap.example.com' }
 
   context 'default params' do
-
     # below is a list of the resource parameters that you can override.
     # By default all non-required parameters are commented out,
     # while all required parameters will require you to add a value
@@ -17,7 +15,9 @@ describe 'jenkins_plugin::config::plugins::ldap::server' do
       }
     end
 
+    # rubocop:disable LineLength
     arglist = "server:ldap://ldap.example.com managerdn:ou=user managerpassword:'password' usersearch:uid={0} inhibitinferrootdn:false displaynameattributename:displayname mailaddressattributename:mail"
+    # rubocop:enable LineLength
 
     it do
       is_expected.to contain_jenkins__cli__exec('ldap_set_server-ldap://ldap.example.com').with(
@@ -29,7 +29,6 @@ describe 'jenkins_plugin::config::plugins::ldap::server' do
   end
 
   context 'custom params' do
-
     # below is a list of the resource parameters that you can override.
     # By default all non-required parameters are commented out,
     # while all required parameters will require you to add a value
@@ -49,7 +48,9 @@ describe 'jenkins_plugin::config::plugins::ldap::server' do
       }
     end
 
+    # rubocop:disable LineLength
     arglist = "server:ldaps://override.example.com managerdn:ou=user managerpassword:'password' usersearch:o={0} inhibitinferrootdn:true displaynameattributename:fullname mailaddressattributename:othermail rootdn:rootdn usersearchbase:newbase groupsearchbase:search groupsearchfilter:groupsearch"
+    # rubocop:enable LineLength
 
     it do
       is_expected.to contain_jenkins__cli__exec('ldap_set_server-ldap://ldap.example.com').with(
@@ -74,7 +75,7 @@ describe 'jenkins_plugin::config::plugins::ldap::server' do
         command: 'ldap_del_server ldap://ldap.example.com',
         unless: "[[ -z \$(\$HELPER_CMD ldap_get_server ldap://ldap.example.com | grep ldap://ldap.example.com) ]]",
         plugin: 'ldap',
-      )    
+      )
     end
   end
 end

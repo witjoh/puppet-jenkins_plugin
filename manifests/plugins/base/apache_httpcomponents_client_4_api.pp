@@ -1,3 +1,5 @@
+# Manages the Jenkins apache-httpcomponents-client-4-api plugin
+#
 class jenkins_plugin::plugins::base::apache_httpcomponents_client_4_api (
   Jenkins_plugin::SemVer $version,
 ) {

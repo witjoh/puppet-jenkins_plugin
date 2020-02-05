@@ -2,14 +2,13 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::plugins::sonar::runner' do
-
   let(:title) { 'my_runner' }
 
   context 'default parameters' do
     let(:params) do
       {
         home: '/my/runner/home',
-      } 
+      }
     end
 
     it do

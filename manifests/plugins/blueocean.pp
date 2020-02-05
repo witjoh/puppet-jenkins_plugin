@@ -1,3 +1,5 @@
+# Manages the Jenkins blueocean plugin and dependencies
+#
 class jenkins_plugin::plugins::blueocean {
 
   include jenkins_plugin::plugins::base::blueocean_autofavorite

@@ -1,3 +1,5 @@
+# Manages the Jenkins workflow-cps-global-lib plugin
+#
 class jenkins_plugin::plugins::base::workflow_cps_global_lib (
   Jenkins_plugin::SemVer $version,
 ) {

@@ -1,3 +1,5 @@
+# Manages the Jenkins workflow-multibranch plugin
+#
 class jenkins_plugin::plugins::base::workflow_multibranch (
   Jenkins_plugin::SemVer $version,
 ) {

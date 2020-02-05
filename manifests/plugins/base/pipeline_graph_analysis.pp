@@ -1,3 +1,5 @@
+# Manages the Jenkins pipeline-graph-analysis plugin
+#
 class jenkins_plugin::plugins::base::pipeline_graph_analysis (
   Jenkins_plugin::SemVer $version,
 ) {

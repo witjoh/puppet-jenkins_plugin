@@ -1,3 +1,5 @@
+# Manages the Jenkins pipeline-milestone-step plugin
+#
 class jenkins_plugin::plugins::base::pipeline_milestone_step (
   Jenkins_plugin::SemVer $version,
 ) {

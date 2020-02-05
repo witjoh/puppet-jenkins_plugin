@@ -1,3 +1,5 @@
+# Manages the Jenkins generic-webhook-trigger plugin
+#
 class jenkins_plugin::plugins::base::generic_webhook_trigger (
   Jenkins_plugin::SemVer $version,
 ) {

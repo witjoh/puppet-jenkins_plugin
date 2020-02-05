@@ -1,3 +1,5 @@
+# Manages the Jenkins preSCMbuildstep plugin
+#
 class jenkins_plugin::plugins::base::prescmbuildstep (
   Jenkins_plugin::SemVer $version,
 ) {

@@ -5,8 +5,8 @@ describe 'jenkins_plugin::config::plugins::possh::common' do
   context 'with defaults' do
     it do
       is_expected.to contain_jenkins__cli__exec('possh_set_common_config').with(
-        command: "possh_set_common_config disableallexec:false",
-        unless: "[[ $($HELPER_CMD possh_insync_common_config disableallexec:false) == true ]]"
+        command: 'possh_set_common_config disableallexec:false',
+        unless: '[[ $($HELPER_CMD possh_insync_common_config disableallexec:false) == true ]]',
       )
     end
   end
@@ -17,10 +17,11 @@ describe 'jenkins_plugin::config::plugins::possh::common' do
         encryptedpassphrase: 'encrypted',
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('possh_set_common_config').with(
-        command: "possh_set_common_config encryptedpassphrase:encrypted disableallexec:false",
-        unless: "[[ $($HELPER_CMD possh_insync_common_config encryptedpassphrase:encrypted disableallexec:false) == true ]]"
+        command: 'possh_set_common_config encryptedpassphrase:encrypted disableallexec:false',
+        unless: '[[ $($HELPER_CMD possh_insync_common_config encryptedpassphrase:encrypted disableallexec:false) == true ]]',
       )
     end
   end
@@ -32,25 +33,27 @@ describe 'jenkins_plugin::config::plugins::possh::common' do
           keypath: 'my/key/path',
         }
       end
+
       it do
         is_expected.to contain_jenkins__cli__exec('possh_set_common_config').with(
-          command: "possh_set_common_config keypath:my/key/path disableallexec:false",
-          unless: "[[ $($HELPER_CMD possh_insync_common_config keypath:my/key/path disableallexec:false) == true ]]"
+          command: 'possh_set_common_config keypath:my/key/path disableallexec:false',
+          unless: '[[ $($HELPER_CMD possh_insync_common_config keypath:my/key/path disableallexec:false) == true ]]',
         )
       end
     end
     context 'key and/or keyspath set' do
-      [ :undef, 'my/key/path' ].each do | p |
+      [:undef, 'my/key/path'].each do |p|
         let(:params) do
           {
             keypath: p,
             key: 'encrypted',
           }
         end
+
         it do
           is_expected.to contain_jenkins__cli__exec('possh_set_common_config').with(
             command: "possh_set_common_config key:'ZW5jcnlwdGVk' disableallexec:false",
-            unless: "[[ $($HELPER_CMD possh_insync_common_config key:'ZW5jcnlwdGVk' disableallexec:false) == true ]]"
+            unless: "[[ $($HELPER_CMD possh_insync_common_config key:'ZW5jcnlwdGVk' disableallexec:false) == true ]]",
           )
         end
       end
@@ -63,10 +66,11 @@ describe 'jenkins_plugin::config::plugins::possh::common' do
         disableallexec: true,
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('possh_set_common_config').with(
-        command: "possh_set_common_config disableallexec:true",
-        unless: "[[ $($HELPER_CMD possh_insync_common_config disableallexec:true) == true ]]"
+        command: 'possh_set_common_config disableallexec:true',
+        unless: '[[ $($HELPER_CMD possh_insync_common_config disableallexec:true) == true ]]',
       )
     end
   end

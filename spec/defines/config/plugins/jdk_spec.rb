@@ -2,10 +2,9 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::plugins::jdk' do
-
   let(:title) { 'somejdk' }
 
-  context 'defaults' do 
+  context 'defaults' do
     let(:params) do
       {
         javahome: '/some/java/home',
@@ -26,11 +25,11 @@ describe 'jenkins_plugin::config::plugins::jdk' do
     end
   end
 
-  context 'overrided' do 
+  context 'overrided' do
     let(:params) do
-      { 
+      {
         javahome: '/some/other/home',
-        jdkname: "overrided name",
+        jdkname: 'overrided name',
       }
     end
 
@@ -42,9 +41,9 @@ describe 'jenkins_plugin::config::plugins::jdk' do
     end
   end
 
-  context 'absent' do 
+  context 'absent' do
     let(:params) do
-      { 
+      {
         javahome: '/some/other/home',
         ensure: 'absent',
       }

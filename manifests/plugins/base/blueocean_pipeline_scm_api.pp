@@ -1,3 +1,5 @@
+# Manages the Jenkins blueocean-pipeline-scm-api plugin
+# 
 class jenkins_plugin::plugins::base::blueocean_pipeline_scm_api (
   Jenkins_plugin::SemVer $version,
 ) {

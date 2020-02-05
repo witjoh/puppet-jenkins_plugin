@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::plugins::gitlab' do
-
   it do
     is_expected.to contain_jenkins_plugin__plugins__install_groovy('gitlab-plugin')
   end
@@ -24,10 +23,9 @@ describe 'jenkins_plugin::plugins::gitlab' do
    'display-url-api',
    'junit',
    'script-security',
-   'workflow-api',
-  ].each do | name |
+   'workflow-api'].each do |name|
     it do
-      is_expected.to contain_jenkins__plugin(name).with_version(/\d.*/)
+      is_expected.to contain_jenkins__plugin(name).with_version(%r{\d.*})
     end
   end
 end
