@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'shared_contexts'
 
-describe 'jenkins_jenkins::config::plugins::nodejs::installation' do
+describe 'jenkins_plugin::config::plugins::nodejs::installation' do
 
   let(:title) { 'myname' }
 
