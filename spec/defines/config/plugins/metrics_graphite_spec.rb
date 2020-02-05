@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::plugins::metrics_graphite' do
-
   let(:title) { 'graphite.server.ex' }
 
   context 'present' do
@@ -10,7 +9,7 @@ describe 'jenkins_plugin::config::plugins::metrics_graphite' do
       it do
         is_expected.to contain_jenkins__cli__exec('graphite_set_server-graphite.server.ex').with(
           command: 'graphite_set_server hostname:graphite.server.ex port:2003',
-          unless: "[[ $($HELPER_CMD graphite_insync_server hostname:graphite.server.ex port:2003) == true ]]",
+          unless: '[[ $($HELPER_CMD graphite_insync_server hostname:graphite.server.ex port:2003) == true ]]',
           plugin: 'metrics-graphite',
         )
       end
@@ -19,10 +18,10 @@ describe 'jenkins_plugin::config::plugins::metrics_graphite' do
     context 'specific' do
       let(:params) do
         {
-          ensure: "present",
-          hostname: "other.server.spec",
+          ensure: 'present',
+          hostname: 'other.server.spec',
           port: 666,
-          prefix: "foo text",
+          prefix: 'foo text',
         }
       end
 
@@ -56,9 +55,9 @@ describe 'jenkins_plugin::config::plugins::metrics_graphite' do
       let(:params) do
         {
           ensure: 'absent',
-          hostname: "other.server.spec",
+          hostname: 'other.server.spec',
           port: 666,
-          prefix: "foo text",
+          prefix: 'foo text',
         }
       end
 

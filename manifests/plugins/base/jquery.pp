@@ -1,3 +1,5 @@
+# Manages the Jenkins jquery plugin
+#
 class jenkins_plugin::plugins::base::jquery (
   Jenkins_plugin::SemVer $version,
 ) {

@@ -1,4 +1,4 @@
-# Manges the Jenkins Disk Usage plugin and dependencies
+# Manages the Jenkins http-request plugin
 #
 class jenkins_plugin::plugins::base::http_request (
   Jenkins_plugin::SemVer $version,

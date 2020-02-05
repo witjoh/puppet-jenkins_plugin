@@ -3,9 +3,9 @@ require 'spec_helper'
 describe 'stringify_undef' do
   it { is_expected.not_to eq(nil) }
   it { is_expected.to run.with_params.and_raise_error(Puppet::ParseError) }
-#  ['true', 'false', nil, :undef, ''].each do |invalid|
-#    it { is_expected.to run.with_params(invalid).and_raise_error(Puppet::ParseError) }
-#  end
+  #  ['true', 'false', nil, :undef, ''].each do |invalid|
+  #    it { is_expected.to run.with_params(invalid).and_raise_error(Puppet::ParseError) }
+  #  end
   it { is_expected.to run.with_params('test', 'yes', 'no', 'maybe').and_raise_error(Puppet::ParseError) }
   it { is_expected.to run.with_params(0, 0, 1).and_raise_error(Puppet::ParseError) }
   it { is_expected.to run.with_params('test', true).and_raise_error(Puppet::ParseError) }

@@ -1,3 +1,5 @@
+# Manages the Jenkins branch-api plugin
+# 
 class jenkins_plugin::plugins::base::branch_api (
   Jenkins_plugin::SemVer $version,
 ) {

@@ -1,3 +1,5 @@
+# Manages the Jenkins credentials plugin
+# 
 class jenkins_plugin::plugins::base::credentials (
   Jenkins_plugin::SemVer $version,
 ) {

@@ -1,3 +1,5 @@
+# Manages the Jenkins workflow-support plugin
+#
 class jenkins_plugin::plugins::base::workflow_support (
   Jenkins_plugin::SemVer $version,
 ) {

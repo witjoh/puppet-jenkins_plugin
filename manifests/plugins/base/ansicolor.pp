@@ -1,3 +1,5 @@
+# Manages the Jenkins ansicolor plugin
+#
 class jenkins_plugin::plugins::base::ansicolor (
   Jenkins_plugin::SemVer $version,
 ) {

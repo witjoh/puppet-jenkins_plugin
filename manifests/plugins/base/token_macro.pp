@@ -1,3 +1,5 @@
+# Manages the Jenkins token-macro plugin
+#
 class jenkins_plugin::plugins::base::token_macro (
   Jenkins_plugin::SemVer $version,
 ) {

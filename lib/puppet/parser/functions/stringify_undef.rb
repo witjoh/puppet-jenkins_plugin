@@ -2,7 +2,7 @@
 # bool2str.rb
 #
 module Puppet::Parser::Functions
-  newfunction(:stringify_undef, :type => :rvalue, :doc => <<-DOC
+  newfunction(:stringify_undef, type: :rvalue, doc: <<-DOC
     Converts an undefined variable, or an empty string, to the
     string 'undef'.  When the variable is assigned a
     proper value, that value is returned.
@@ -32,7 +32,7 @@ module Puppet::Parser::Functions
 
     # We can have either undef or a String, and nothing else
     # puppet does translate the undef to an empty string
-    if value.nil? || value == :undef || ( klass == String && value == '' )
+    if value.nil? || value == :undef || (klass == String && value == '')
       value = undef_string
     end
 

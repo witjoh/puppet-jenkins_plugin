@@ -1,3 +1,5 @@
+# Manages the Jenkins jquery-detached plugin
+#
 class jenkins_plugin::plugins::base::jquery_detached (
   Jenkins_plugin::SemVer $version,
 ) {

@@ -1,3 +1,5 @@
+# Manages the Jenkins build-failure-analyzer plugin
+# 
 class jenkins_plugin::plugins::base::build_failure_analyzer (
   Jenkins_plugin::SemVer $version,
 ) {

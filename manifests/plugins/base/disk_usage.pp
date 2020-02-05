@@ -1,4 +1,4 @@
-# Manges the Jenkins Disk Usage plugin and dependencies
+# Manages the Jenkins disk-usage plugin
 #
 class jenkins_plugin::plugins::base::disk_usage (
   Jenkins_plugin::SemVer $version,

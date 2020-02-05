@@ -2,10 +2,9 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::plugins::sonar::config' do
-
   let(:title) { 'my_sonar' }
 
-  context 'default parameters' do
+  cuntext 'default parameters' do
     let(:params) do
       {
         serverurl: 'http://sonarlts.somewhere.world:9000',
@@ -33,12 +32,14 @@ describe 'jenkins_plugin::config::plugins::sonar::config' do
       }
     end
 
+    # rubocop:disable LineLength
     it do
       is_expected.to contain_jenkins__cli__exec('sonar_set_globalconfig-my_sonar').with(
         command: "sonar_set_globalconfig name:'other_sonar' credentialsid:'othertoken' serverurl:http://new.sonar.ex:9999 mojoversion:666 additionalanalysisproperties:'analysis' additionalproperties:'properties'",
         unless: "[[ $($HELPER_CMD sonar_insync_globalconfig \"name:'other_sonar' credentialsid:'othertoken' serverurl:http://new.sonar.ex:9999 mojoversion:666 additionalanalysisproperties:'analysis' additionalproperties:'properties'\") == true ]]",
       )
     end
+    # rubocop:enable LineLength
   end
 
   context 'with ensure is absent' do

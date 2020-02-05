@@ -24,9 +24,9 @@ describe 'jenkins_plugin::config::plugins::gitlab::token' do
     let(:params) do
       {
         apitoken: 'token',
-        id: "newfoo",
-        ensure: "present",
-        description: "newdescription",
+        id: 'newfoo',
+        ensure: 'present',
+        description: 'newdescription',
       }
     end
 
@@ -46,6 +46,7 @@ describe 'jenkins_plugin::config::plugins::gitlab::token' do
         ensure: 'absent',
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('gitlab_del_token-foo').with(
         command: "gitlab_del_token 'foo'",

@@ -26,7 +26,7 @@ define jenkins_plugin::config::plugins::ssh_site (
     plugin => 'ssh',
   }
 
-  $arguments = "hostname:${hostname} port:${port} credentialid:'${credentialid}' pty:${pty} serveraliveinterval:${serveraliveinterval} timeout:${timeout}"
+  $arguments = "hostname:${hostname} port:${port} credentialid:'${credentialid}' pty:${pty} serveraliveinterval:${serveraliveinterval} timeout:${timeout}" # lint:ignore:140chars
 
   if $ensure == 'present' {
     jenkins::cli::exec { "set_ssh_remote_host-${title}":

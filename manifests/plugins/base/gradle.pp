@@ -1,3 +1,5 @@
+# Manages the Jenkins gradle plugin
+#
 class jenkins_plugin::plugins::base::gradle (
   Jenkins_plugin::SemVer $version,
 ) {

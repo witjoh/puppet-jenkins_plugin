@@ -59,7 +59,7 @@ define jenkins_plugin::config::plugins::ldap::server (
   }
 
 
-  $arguments = strip("${_server}${_managerdn}${_managerpassword}${_usersearch}${_inhibitinferrootdn}${_displaynameattributename}${_mailaddressattributename}${_rootdn}${_usersearchbase}${_groupsearchbase}${_groupsearchfilter}")
+  $arguments = strip("${_server}${_managerdn}${_managerpassword}${_usersearch}${_inhibitinferrootdn}${_displaynameattributename}${_mailaddressattributename}${_rootdn}${_usersearchbase}${_groupsearchbase}${_groupsearchfilter}") # lint:ignore:140chars
   $set_command = 'ldap_set_server'
   $unless_command = 'ldap_insync_server'
 

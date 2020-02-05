@@ -1,3 +1,5 @@
+# Manages the Jenkins pipeline-input-step plugin
+#
 class jenkins_plugin::plugins::base::pipeline_input_step (
   Jenkins_plugin::SemVer $version,
 ) {

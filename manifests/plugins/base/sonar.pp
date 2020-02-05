@@ -1,3 +1,5 @@
+# Manages the Jenkins sonar plugin
+#
 class jenkins_plugin::plugins::base::sonar (
   Jenkins_plugin::SemVer $version,
 ) {

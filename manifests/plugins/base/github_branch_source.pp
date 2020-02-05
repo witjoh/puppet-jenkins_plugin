@@ -1,3 +1,5 @@
+# Manages the Jenkins github-branch-source plugin
+#
 class jenkins_plugin::plugins::base::github_branch_source (
   Jenkins_plugin::SemVer $version,
 ) {

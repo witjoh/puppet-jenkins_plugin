@@ -5,7 +5,6 @@ describe 'jenkins_plugin::config::plugins::system::environment_var' do
   let(:title) { 'MyKey' }
 
   context 'env_value only set' do
-
     let(:params) do
       {
         env_value: 'foo',
@@ -13,7 +12,7 @@ describe 'jenkins_plugin::config::plugins::system::environment_var' do
         # ensure: "present",
       }
     end
-  
+
     it do
       is_expected.to contain_jenkins__cli__exec('set_global_env-MyKey').with(
         command: 'set_global_env MYKEY foo',
@@ -21,7 +20,7 @@ describe 'jenkins_plugin::config::plugins::system::environment_var' do
         plugin: 'global',
       )
     end
-  end 
+  end
 
   context 'env_key set' do
     let(:params) do
@@ -31,6 +30,7 @@ describe 'jenkins_plugin::config::plugins::system::environment_var' do
         # ensure: "present",
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('set_global_env-MyKey').with(
         command: 'set_global_env BAR foo',
@@ -48,6 +48,7 @@ describe 'jenkins_plugin::config::plugins::system::environment_var' do
         force_upcase: false,
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('set_global_env-MyKey').with(
         command: 'set_global_env bar foo',
@@ -57,13 +58,13 @@ describe 'jenkins_plugin::config::plugins::system::environment_var' do
     end
   end
 
-
-  context 'absent'  do
+  context 'absent' do
     let(:params) do
       {
-        ensure: "absent",
+        ensure: 'absent',
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('del_global_env-MyKey').with(
         command: 'del_global_env MYKEY',
@@ -76,10 +77,10 @@ describe 'jenkins_plugin::config::plugins::system::environment_var' do
   context 'fail if env_var unset' do
     let(:params) do
       {
-        ensure: "present",
+        ensure: 'present',
       }
     end
 
-    it { is_expected.to compile.and_raise_error(/The attribute \$env_value must be set when \$ensure => present !/) }
+    it { is_expected.to compile.and_raise_error(%r{The attribute \$env_value must be set when \$ensure => present !}) }
   end
 end

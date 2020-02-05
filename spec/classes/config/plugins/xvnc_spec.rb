@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::plugins::xvnc' do
-
   context 'default params' do
     let(:params) do
       {
@@ -14,7 +13,7 @@ describe 'jenkins_plugin::config::plugins::xvnc' do
       is_expected.to contain_jenkins__cli__exec('set_xvnc').with(
         command: "set_xvnc commandline:'xvnc_settings'",
         unless: "[[ $($HELPER_CMD insync_xvnc \"commandline:'xvnc_settings'\") == true ]]",
-        plugin: "xvnc",
+        plugin: 'xvnc',
       )
     end
   end
@@ -33,7 +32,7 @@ describe 'jenkins_plugin::config::plugins::xvnc' do
       is_expected.to contain_jenkins__cli__exec('set_xvnc').with(
         command: "set_xvnc commandline:'new_xvnc_settings' mindisplaynumber:100 maxdisplaynumber:199 cleanup:true",
         unless: "[[ $($HELPER_CMD insync_xvnc \"commandline:'new_xvnc_settings' mindisplaynumber:100 maxdisplaynumber:199 cleanup:true\") == true ]]",
-        plugin: "xvnc",
+        plugin: 'xvnc',
       )
     end
   end

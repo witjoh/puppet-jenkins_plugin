@@ -1,3 +1,5 @@
+# Manages the Jenkins metrics-graphite plugin
+#
 class jenkins_plugin::plugins::base::metrics_graphite (
   Jenkins_plugin::SemVer $version,
 ) {

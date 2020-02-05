@@ -1,3 +1,5 @@
+# Manages the Jenkins build-publisher plugin
+# 
 class jenkins_plugin::plugins::base::build_publisher (
   Jenkins_plugin::SemVer $version,
 ) {

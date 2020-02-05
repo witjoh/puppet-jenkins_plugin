@@ -2,10 +2,8 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::plugins::core' do
-
-  [ 'bouncycastle-api',
-    'windows-slaves',
-  ].each do | name |
+  ['bouncycastle-api',
+   'windows-slaves'].each do |name|
     context 'pre 2.190 version' do
       let(:facts) do
         {
@@ -14,7 +12,7 @@ describe 'jenkins_plugin::plugins::core' do
       end
 
       it do
-        is_expected.not_to contain_jenkins__plugin(name).with_version(/\d.*/)
+        is_expected.not_to contain_jenkins__plugin(name).with_version(%r{\d.*})
       end
     end
 
@@ -26,7 +24,7 @@ describe 'jenkins_plugin::plugins::core' do
       end
 
       it do
-        is_expected.to contain_jenkins__plugin(name).with_version(/\d.*/)
+        is_expected.to contain_jenkins__plugin(name).with_version(%r{\d.*})
       end
     end
   end

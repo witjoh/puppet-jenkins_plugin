@@ -1,3 +1,5 @@
+# Manages the Jenkins windows-slaves plugin
+#
 class jenkins_plugin::plugins::base::windows_slaves (
   Jenkins_plugin::SemVer $version,
 ) {

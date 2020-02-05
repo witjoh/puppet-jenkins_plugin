@@ -1,3 +1,5 @@
+# Manages the Jenkins BlazeMeterJenkinsPlugin plugin
+# 
 class jenkins_plugin::plugins::base::blazemeterjenkinsplugin (
   Jenkins_plugin::SemVer $version,
 ) {

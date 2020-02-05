@@ -1,3 +1,5 @@
+# Manages the Jenkins ldap plugin
+#
 class jenkins_plugin::plugins::base::ldap (
   Jenkins_plugin::SemVer $version,
 ) {

@@ -1,3 +1,5 @@
+# Manages the Jenkins matrix-auth plugin
+#
 class jenkins_plugin::plugins::base::matrix_auth (
   Jenkins_plugin::SemVer $version,
 ) {

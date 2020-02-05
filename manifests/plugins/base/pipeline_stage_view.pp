@@ -1,3 +1,5 @@
+# Manages the Jenkins pipeline-stage-view plugin
+#
 class jenkins_plugin::plugins::base::pipeline_stage_view (
   Jenkins_plugin::SemVer $version,
 ) {

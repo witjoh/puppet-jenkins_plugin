@@ -1,3 +1,5 @@
+# Manages the Jenkins htmlpublisher plugin and dependencies
+#
 class jenkins_plugin::plugins::htmlpublisher {
 
   include jenkins_plugin::plugins::base::htmlpublisher

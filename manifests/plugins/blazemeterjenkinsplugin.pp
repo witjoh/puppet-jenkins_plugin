@@ -1,3 +1,5 @@
+# Manages the Jenkins blazemeterjenkinsplugin plugin and dependencies
+#
 class jenkins_plugin::plugins::blazemeterjenkinsplugin {
 
   include jenkins_plugin::plugins::base::blazemeterjenkinsplugin

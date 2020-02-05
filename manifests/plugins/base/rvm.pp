@@ -1,3 +1,5 @@
+# Manages the Jenkins rvm plugin
+#
 class jenkins_plugin::plugins::base::rvm (
   Jenkins_plugin::SemVer $version,
 ) {

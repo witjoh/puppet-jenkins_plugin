@@ -1,3 +1,5 @@
+# Manages the Jenkins git-server plugin
+#
 class jenkins_plugin::plugins::base::git_server (
   Jenkins_plugin::SemVer $version,
 ) {

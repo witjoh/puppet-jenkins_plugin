@@ -1,3 +1,5 @@
+# Manages the Jenkins bouncycastle-api plugin
+# 
 class jenkins_plugin::plugins::base::bouncycastle_api (
   Jenkins_plugin::SemVer $version,
 ) {

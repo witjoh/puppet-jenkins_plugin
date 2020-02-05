@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::plugins::nodemonitors' do
-
   let(:params) do
     {
       # architecture: true,
@@ -17,18 +16,19 @@ describe 'jenkins_plugin::config::plugins::nodemonitors' do
   end
 
   context 'defaults' do
-
     it do
       is_expected.to contain_jenkins_plugin__plugins__install_groovy('nodemonitors')
     end
 
+    # rubocop:disable LineLength
     it do
       is_expected.to contain_jenkins__cli__exec('set_monitors').with(
         command: 'set_monitors architecture:true clock:true diskspace:true diskspacethreshold:1GB swapspace:true tempspace:true tempspacethreshold:1GB responsetime:true',
-        unless: "[[ $($HELPER_CMD insync_monitors \"architecture:true clock:true diskspace:true diskspacethreshold:1GB swapspace:true tempspace:true tempspacethreshold:1GB responsetime:true\") == true ]]",
+        unless: '[[ $($HELPER_CMD insync_monitors "architecture:true clock:true diskspace:true diskspacethreshold:1GB swapspace:true tempspace:true tempspacethreshold:1GB responsetime:true") == true ]]',
       )
     end
   end
+  # rubocop:enable LineLength
 
   context 'custom parameters' do
     context 'architecture: false' do
@@ -37,10 +37,11 @@ describe 'jenkins_plugin::config::plugins::nodemonitors' do
           architecture: false,
         }
       end
+
       it do
         is_expected.to contain_jenkins__cli__exec('set_monitors').with(
-          command: /architecture:false/,
-          unless: /architecture:false/,
+          command: %r{architecture:false},
+          unless: %r{architecture:false},
         )
       end
     end
@@ -52,10 +53,11 @@ describe 'jenkins_plugin::config::plugins::nodemonitors' do
         clock: false,
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('set_monitors').with(
-        command: /clock:false/,
-        unless: /clock:false/,
+        command: %r{clock:false},
+        unless: %r{clock:false},
       )
     end
   end
@@ -66,10 +68,11 @@ describe 'jenkins_plugin::config::plugins::nodemonitors' do
         diskspace: false,
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('set_monitors').with(
-        command: /diskspace:false/,
-        unless: /diskspace:false/,
+        command: %r{diskspace:false},
+        unless: %r{diskspace:false},
       )
     end
   end
@@ -77,13 +80,14 @@ describe 'jenkins_plugin::config::plugins::nodemonitors' do
   context 'diskspacethreshold: 512MB' do
     let(:params) do
       {
-        diskspacethreshold: "512MB",
+        diskspacethreshold: '512MB',
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('set_monitors').with(
-        command: /diskspacethreshold:512MB/,
-        unless: /diskspacethreshold:512MB/,
+        command: %r{diskspacethreshold:512MB},
+        unless: %r{diskspacethreshold:512MB},
       )
     end
   end
@@ -94,10 +98,11 @@ describe 'jenkins_plugin::config::plugins::nodemonitors' do
         swapspace: false,
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('set_monitors').with(
-        command: /swapspace:false/,
-        unless: /swapspace:false/,
+        command: %r{swapspace:false},
+        unless: %r{swapspace:false},
       )
     end
   end
@@ -108,10 +113,11 @@ describe 'jenkins_plugin::config::plugins::nodemonitors' do
         tempspace: false,
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('set_monitors').with(
-        command: /tempspace:false/,
-        unless: /tempspace:false/,
+        command: %r{tempspace:false},
+        unless: %r{tempspace:false},
       )
     end
   end
@@ -119,13 +125,14 @@ describe 'jenkins_plugin::config::plugins::nodemonitors' do
   context 'tempspacethreshold: 128m' do
     let(:params) do
       {
-        tempspacethreshold: "128m",
+        tempspacethreshold: '128m',
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('set_monitors').with(
-        command: /tempspacethreshold:128m/,
-        unless: /tempspacethreshold:128m/,
+        command: %r{tempspacethreshold:128m},
+        unless: %r{tempspacethreshold:128m},
       )
     end
   end
@@ -136,10 +143,11 @@ describe 'jenkins_plugin::config::plugins::nodemonitors' do
         responsetime: false,
       }
     end
+
     it do
       is_expected.to contain_jenkins__cli__exec('set_monitors').with(
-        command: /responsetime:false/,
-        unless: /responsetime:false/,
+        command: %r{responsetime:false},
+        unless: %r{responsetime:false},
       )
     end
   end

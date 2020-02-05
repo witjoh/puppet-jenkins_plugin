@@ -7,10 +7,9 @@ describe 'jenkins_plugin::plugins::http_request' do
   end
 
   ['http-request',
-   'apache-httpcomponents-client-4-api',
-  ].each do | name |
+   'apache-httpcomponents-client-4-api'].each do |name|
     it do
-      is_expected.to contain_jenkins__plugin(name).with_version(/\d.*/)
+      is_expected.to contain_jenkins__plugin(name).with_version(%r{\d.*})
     end
   end
 end

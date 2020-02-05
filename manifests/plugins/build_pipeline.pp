@@ -1,3 +1,5 @@
+# Manages the Jenkins build_pipeline plugin and dependencies
+#
 class jenkins_plugin::plugins::build_pipeline {
 
   include jenkins_plugin::plugins::base::build_pipeline_plugin

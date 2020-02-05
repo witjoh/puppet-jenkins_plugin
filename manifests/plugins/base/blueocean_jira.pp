@@ -1,3 +1,5 @@
+# Manages the Jenkins blueocean-jira  plugin
+# 
 class jenkins_plugin::plugins::base::blueocean_jira (
   Jenkins_plugin::SemVer $version,
 ) {

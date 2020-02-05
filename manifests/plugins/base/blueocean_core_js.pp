@@ -1,3 +1,5 @@
+# Manages the Jenkinsi blueocean-core-js plugin
+# 
 class jenkins_plugin::plugins::base::blueocean_core_js (
   Jenkins_plugin::SemVer $version,
 ) {

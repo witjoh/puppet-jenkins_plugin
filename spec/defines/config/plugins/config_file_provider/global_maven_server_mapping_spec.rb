@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::plugins::config_file_provider::global_maven_server_mapping' do
-
   let(:title) { 'foo' }
 
   context 'present' do
@@ -29,7 +28,7 @@ describe 'jenkins_plugin::config::plugins::config_file_provider::global_maven_se
         maven_configid: 'mavenid',
         serverid: 'serverid',
         credentialsid: 'credsid',
-        ensure: "absent",
+        ensure: 'absent',
       }
     end
 

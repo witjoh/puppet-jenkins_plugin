@@ -2,9 +2,7 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::plugins::ldap::global' do
-
   context 'default params' do
-
     arglist = 'disableroleprefixing:false disablemailaddressresolver:false useridstrategy:CaseInsensitive groupidstrategy:CaseInsensitive'
 
     it do
@@ -17,12 +15,11 @@ describe 'jenkins_plugin::config::plugins::ldap::global' do
   end
 
   context 'custom params' do
-
     let(:params) do
       {
         disableroleprefixing: true,
         disablemailaddressresolver: true,
-        useridstrategy: "CaseSensitive",
+        useridstrategy: 'CaseSensitive',
         groupidstrategy: '1',
         cachesize: 20,
         cachettl: 20,

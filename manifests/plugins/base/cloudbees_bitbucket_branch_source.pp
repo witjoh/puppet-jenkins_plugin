@@ -1,3 +1,5 @@
+# Manages the Jenkins cloudbees-bitbucket-branch-source plugin
+# 
 class jenkins_plugin::plugins::base::cloudbees_bitbucket_branch_source (
   Jenkins_plugin::SemVer $version,
 ) {

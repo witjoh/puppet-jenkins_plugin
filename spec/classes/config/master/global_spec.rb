@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::master::global' do
-
   context 'default params' do
     let(:facts) do
       {
@@ -56,10 +55,11 @@ describe 'jenkins_plugin::config::master::global' do
         labels: 'testlabel',
         message: 'testmessage',
         restrict_usage: true,
-        root_url: "https://testserver:8080/",
+        root_url: 'https://testserver:8080/',
         admin_mail: 'testmail@example.com',
       }
     end
+
     # add these two lines in a single test block to enable puppet and hiera debug mode
     # Puppet::Util::Log.level = :debug
     # Puppet::Util::Log.newdestination(:console)

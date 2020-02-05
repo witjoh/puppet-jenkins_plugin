@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::config::plugins::lib' do
-  
   it do
     is_expected.to contain_file('/usr/lib/jenkins/groovy/plugins/lib').with(
       ensure: 'directory',
@@ -11,7 +10,7 @@ describe 'jenkins_plugin::config::plugins::lib' do
       group: 'jenkins',
     )
   end
-  
+
   it do
     is_expected.to contain_file('/usr/lib/jenkins/groovy/plugins/lib/Plib.groovy').with(
       ensure: 'directory',

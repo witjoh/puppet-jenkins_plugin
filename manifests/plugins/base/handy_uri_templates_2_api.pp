@@ -1,3 +1,5 @@
+# Manages the Jenkins handy-uri-templates-2-api plugin
+#
 class jenkins_plugin::plugins::base::handy_uri_templates_2_api (
   Jenkins_plugin::SemVer $version,
 ) {

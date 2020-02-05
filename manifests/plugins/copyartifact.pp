@@ -1,3 +1,5 @@
+# Manages the Jenkins copyartifact plugin and dependencies
+#
 class jenkins_plugin::plugins::copyartifact {
 
   include jenkins_plugin::plugins::base::copyartifact

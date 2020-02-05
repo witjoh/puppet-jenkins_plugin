@@ -1,3 +1,5 @@
+# Manages the Jenkins nodejs plugin
+#
 class jenkins_plugin::plugins::base::nodejs (
   Jenkins_plugin::SemVer $version,
 ) {

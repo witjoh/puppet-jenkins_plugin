@@ -1,3 +1,5 @@
+# Manages the Jenkins jira plugin
+#
 class jenkins_plugin::plugins::base::jira (
   Jenkins_plugin::SemVer $version,
 ) {

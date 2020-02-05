@@ -1,3 +1,5 @@
+# Manages the Jenkins blueocean-rest-impl plugin
+# 
 class jenkins_plugin::plugins::base::blueocean_rest_impl (
   Jenkins_plugin::SemVer $version,
 ) {

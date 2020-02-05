@@ -1,3 +1,5 @@
+# Manages the Jenkins maven-plugin plugin
+#
 class jenkins_plugin::plugins::base::maven_plugin (
   Jenkins_plugin::SemVer $version,
 ) {

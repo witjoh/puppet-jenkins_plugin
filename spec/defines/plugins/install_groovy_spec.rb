@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'shared_contexts'
 
 describe 'jenkins_plugin::plugins::install_groovy' do
-
   let(:title) { 'myplugin' }
 
   context 'default params' do
@@ -35,9 +34,10 @@ describe 'jenkins_plugin::plugins::install_groovy' do
   context 'ensure => absent' do
     let(:params) do
       {
-        ensure: "absent",
+        ensure: 'absent',
       }
     end
+
     it do
       is_expected.to contain_file('/usr/lib/jenkins/groovy/plugins/myplugin/puppet_helper_myplugin.groovy').with(
         ensure: 'absent',
@@ -49,10 +49,11 @@ describe 'jenkins_plugin::plugins::install_groovy' do
   context 'source => custom' do
     let(:params) do
       {
-        ensure: "present",
+        ensure: 'present',
         source: 'foo',
       }
     end
+
     it do
       is_expected.to contain_file('/usr/lib/jenkins/groovy/plugins/myplugin/puppet_helper_myplugin.groovy').with(
         ensure: 'file',

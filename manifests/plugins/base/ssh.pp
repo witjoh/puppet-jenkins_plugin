@@ -1,3 +1,5 @@
+# Manages the Jenkins ssh plugin
+#
 class jenkins_plugin::plugins::base::ssh (
   Jenkins_plugin::SemVer $version,
 ) {

@@ -1,3 +1,5 @@
+# Manages the Jenkins plain-credentials plugin
+#
 class jenkins_plugin::plugins::base::plain_credentials (
   Jenkins_plugin::SemVer $version,
 ) {
